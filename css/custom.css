@@ -1,0 +1,159 @@
+article {
+    background: linear-gradient(
+      to right, 
+      hsl(98 100% 62%), 
+      hsl(204 100% 59%)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+  }
+
+h1 {
+    font-size: 10vmin;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+small{
+  color:#c0c4cc
+}
+  
+p {
+    font-family: "Dank Mono", ui-monospace, monospace;
+    -webkit-text-fill-color: #e8faf9;
+}
+
+.navbar-brand{
+  background: linear-gradient(
+    to right, 
+    rgb(103, 133, 87), 
+    hsl(204 100% 59%)
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.nav_style{
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.7);
+  padding:0 2.75rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.play{
+  position:relative;
+  top: 28vh; 
+  right: 1vh; 
+  transform: scale(3); 
+  border: 8px 
+  solid black; 
+  border-radius: 150px; 
+  padding:0.5em; 
+  opacity:0.5;
+}
+
+.seafarers_table{
+  color: #000!important;
+}
+
+.h5_title a{
+  font-weight: 600;
+  font-size: 1em;
+  color: #797a7c;
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+}
+
+.h3_title {
+  font-weight: 600;
+  color: #57595e;
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+}
+
+.discreption_text{
+  font-size: smaller;
+  -webkit-text-fill-color: #797a7c;
+}
+
+.enrollment_text{
+  font-weight: 600;
+  font-size: larger;
+  -webkit-text-fill-color: #575a61;
+}
+
+.active_tab{
+  color:#cfdfde !important;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.active_tab:hover{
+  text-decoration:  none;
+  pointer-events: none;
+}
+
+body.login {
+  background: hsl(204 100% 5%);
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+  font-family: system-ui;
+  font-size: min(200%, 5vmin);
+}
+
+html {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.home_link{
+  text-decoration:none;
+  transition:0.5s;
+}
+.home_link:hover{
+  
+  opacity:0.8;
+  text-decoration:none;
+}
+
+.li_element{
+  color:#e8faf9 !important;
+  margin: 0.35rem;
+}
+
+.post_title{
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  padding: 1px;
+  font-family: "Dank Mono", ui-monospace, monospace;
+  font-weight: 550;
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to right, black, rgba(230, 230, 230, 0.5), black);
+  white-space: nowrap;
+  box-shadow: 0 10px 80px 0 rgba(0,0,0,.7);
+}
+
+.post_title::before {
+  content: "";
+  position: absolute;
+  left: -250px;
+  top: -50px;
+  width: 250%;
+  margin-left: -300px;
+  margin-top: -220px;
+  
+  height: 330px;
+  background: radial-gradient(ellipse closest-side, black, black);
+  z-index: -1;
+}
+
