@@ -5,7 +5,8 @@
 <body>
 <?php include "navigation.php";?>
 
-<?php if(isLoggedIn()){ ?>
+<?php if(isLoggedIn()){  ?>
+    
     <div class="container" style="margin-top:5rem ;">
        
             <div class="col-md-12">
@@ -45,6 +46,7 @@
 
                         $count = ceil($count/$per_page);
 
+                        $page_count = $count;
                         $query = "SELECT course_id FROM enrolments WHERE user_id = '$user_id' AND completed = 1 LIMIT $page_1, $per_page";
 
                         $select_all_course_id = mysqli_query($connection, $query);
@@ -103,7 +105,7 @@
             <ul class="pagination">
                 <?php if((int)$page !== 1 && (int)$page !== 0){ ?>
                 <li class="page-item">
-                    <a class="page-link" href="home_page.php?page=<?php echo (int)$page-1; ?>" aria-label="Previous">
+                    <a class="page-link" href="completions.php?page=<?php echo (int)$page-1; ?>" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Previous</span>
                     </a>
@@ -112,15 +114,15 @@
                 }
                     for($i=1;$i<=$count;$i++){
                         if($i == $page){
-                            echo "<li class='page-item'><a class='active_link page-link' href='home_page.php?page=$i'>$i</a></li>";   
+                            echo "<li class='page-item'><a class='active_link page-link' href='completions.php?page=$i'>$i</a></li>";   
                         }else{
-                            echo "<li class='page-item'><a class='page-link' href='home_page.php?page=$i'>$i</a></li>";
+                            echo "<li class='page-item'><a class='page-link' href='completions.php?page=$i'>$i</a></li>";
                         }
                     }
-                    if((int)$page !== (int)$count){
+                    if((int)$page !== (int)$count && $page_count > 1){
                     ?>
                 <li class="page-item">
-                    <a class="page-link" href="home_page.php?page=<?php echo (int)$page+1; ?>" aria-label="Next">
+                    <a class="page-link" href="completions.php?page=<?php echo (int)$page == "" ? (int)$page+2 : (int)$page+1 ; ?>" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                         <span class="sr-only">Next</span>
                     </a>

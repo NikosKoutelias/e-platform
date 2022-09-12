@@ -1,0 +1,93 @@
+-header.php
+    -Got Bootstrap links, Fontawesome and custom CSS
+    -Starts session
+
+-footer.php
+    -End Body
+    -Link jQuery
+    -Got copyright
+
+-db.php
+    -Database communication
+    -ob_start() in order to work sessions and header location
+
+-home_page.php
+    -Landing Page
+    -Course category is active on it and displays all courses and pagination
+
+-navigation.php
+    -Got categories Courses, Seafarers, Enrolments and Completions
+    -Got SignUn and Login tab
+    -The E-platform banner at left moves to home_page
+    -After Login the Login + SignUn tabs are replaced with LogOut
+    -After Login says a welcome message at right for the $_SESSION['username']
+    -Categories are static and the active tabs-classes, comes up from break down of $_SERVER['PHP_SELF']
+
+-login.php
+    -Post Form
+    -Generates CRSF token via token_generator and validates with token_validator
+    -Checks method to be post via ifItIsMethod and logs user in via login_user
+    -SignIn redirects user to register form
+
+-signup.php
+    -Post Form
+    -Generates CRSF token via token_generator and validates with token_validator
+    -Sanitizes data inputs
+    -Makes validations and upon errors, displays proper messages
+    -After successfull register displays proper message
+
+-logout.php
+    -Clear session data 
+    -redirects to home_page
+
+-seafarers.php
+    -Displays a table with all seafarers that have been registered to platform
+    -Makes database call and brings all rows from table users
+
+-enrolments.php
+    -Validates if user is loged in via isLoggedIn and if not displays proper message
+    -Displays all enrolled courses that user has been enrolled
+    -If the user hasn't enrolled yet in any course, displays proper message
+
+-completions.php
+    -Validates if user is loged in via isLoggedIn and if not displays proper message
+    -Displays all completed courses
+    -If the user hasn't completed yet any course, displays proper message
+
+-post.php
+    -Displays a place holder for video
+    -If you are not loged in displays proper message
+    -If you are logged in displays a message if you own this course or asks you to enrolled
+    -If you own this course, displays a message if you have completed it
+    -You can complete the course if you click the switcher under the video
+    -Makes a call at table enrolments via Ajax and post a true or false value, upon completion
+
+-function.php
+    -login_user 
+        Logins a user and redirects
+    -isLoggedIn
+        Returns bool if user is logged in
+    -redirect
+        Redirects via header(Location:)
+    -register_user
+        Registers a user to database
+    -email_exists
+        Returns bool if email exists
+    -username_exists
+        Returns bool if username exists
+    -isCompleted
+        Returns bool if user has completed a course
+    -isEnrolled
+        Returns bool if user is enrolled in a course
+    -loggedInUserId
+        Returns logged in user ID
+    -query
+        Query to database
+    -ifItIsMethod
+        Validate if request method is on of the acceptable
+    -confirm
+        Confirms a query success
+    -token_validator
+        Validates session token with token
+    -token_generator
+        Generates a one time random token

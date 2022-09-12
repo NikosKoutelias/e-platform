@@ -5,8 +5,11 @@
 <body>
 <?php include "navigation.php";?>
 
-<?php if(isLoggedIn()){ ?>
-    <div class="container" style="margin-top:5rem ;">
+
+
+<?php 
+    if(isLoggedIn()){ ?>
+        <div class="container" style="margin-top:5rem ;">
        
             <div class="col-md-12">
 
@@ -44,6 +47,8 @@
                     }else{
 
                         $count = ceil($count/$per_page);
+                        
+                        $page_count = $count;
 
                         $query = "SELECT course_id FROM enrolments WHERE user_id = '$user_id'";
 
@@ -117,10 +122,10 @@
                             echo "<li class='page-item'><a class='page-link' href='enrolments.php?page=$i'>$i</a></li>";
                         }
                     }
-                    if((int)$page !== (int)$count){
+                    if((int)$page !== (int)$count && $page_count > 1){
                     ?>
                 <li class="page-item">
-                    <a class="page-link" href="enrolments.php?page=<?php echo (int)$page+1; ?>" aria-label="Next">
+                    <a class="page-link" href="enrolments.php?page=<?php echo (int)$page == ""  ? (int)$page+2 : (int)$page+1 ; ?>" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                         <span class="sr-only">Next</span>
                     </a>

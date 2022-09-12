@@ -16,3 +16,4 @@
 
 <?php session_start();?>
 
+<?php global $page_count; ?>

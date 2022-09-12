@@ -55,7 +55,7 @@
                         </div>
 
                     </form>
-                    <a href="" style="font-size:smaller;">Forgot Password?</a> 
+                    <a href="#" style="font-size:smaller;">Forgot Password?</a> 
                     <hr style="border-top:none;">
                     <a href="signup.php"> Sign Up</a>
                     
